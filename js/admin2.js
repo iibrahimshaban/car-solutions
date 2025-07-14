@@ -288,12 +288,12 @@ function loadCreateCarForm() {
     fromCreate.addEventListener('submit', function (s) {
         s.preventDefault()
         let hasErrors = false;
+        errorSection.innerHTML = 'the fields : '
 
         Array.from(fromCreate.elements)
             .filter(ele => ele.tagName.toLowerCase() === 'input' && ele.type === 'text')
             .forEach((element) => {
                 if (element.value === '') {
-                    errorSection.innerHTML = 'the fields : '
                     hasErrors = true
                     errorSection.innerHTML += `<span>[${element.id}] </span>`
                     element.style.border = '1px solid red'
@@ -344,6 +344,8 @@ function loadCreateCarForm() {
         localStorage.setItem('data', JSON.stringify(data));
         alert('created successfully')
         fromCreate.reset()
+        errorSection.innerHTML = ''
+        errorSection.style.border = 'none'
         sessionStorage.clear()
     }
 
@@ -405,12 +407,12 @@ function LoadRentalCarForm() {
     myForm.addEventListener('submit', function (s) {
         s.preventDefault()
         let hasErrors = false;
+        errorSection.innerHTML = 'the fields : '
 
         Array.from(myForm.elements)
             .filter(ele => ele.tagName.toLowerCase() === 'input' && ele.type === 'text')
             .forEach((element, index, array) => {
                 if (element.value === '') {
-                    errorSection.innerHTML = 'the fields : '
                     hasErrors = true
                     errorSection.innerHTML += `<span>[${element.id}] </span>`
                     element.style.border = '1px solid red'
@@ -458,6 +460,8 @@ function LoadRentalCarForm() {
         localStorage.setItem('rentalData', JSON.stringify(data));
         alert('created successfully')
         myForm.reset()
+        errorSection.innerHTML = ''
+        errorSection.style.border = 'none'
         sessionStorage.clear()
     }
 

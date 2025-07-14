@@ -1,5 +1,4 @@
 let totalPriceSection = document.getElementById('totalPrice')
-let cart = localStorage.cartData == null ? [] : JSON.parse(localStorage.cartData)
 let cartContainer = document.getElementById('order-body')
 const deleteBtn = document.getElementById('deleteAll')
 
@@ -18,6 +17,7 @@ function calculateTotalPrice(){
 
 function displayItems(){
     cartContainer.innerHTML = ''
+    let cart = localStorage.cartData == null ? [] : JSON.parse(localStorage.cartData)
     cart.forEach((element,index) => {
         let orderRowDiv = document.createElement('div');
         orderRowDiv.classList.add('order-row');
@@ -36,12 +36,14 @@ function displayItems(){
 }
 
 function removeItem(i){
+    let cart = localStorage.cartData == null ? [] : JSON.parse(localStorage.cartData)
     cart.splice(i,1)
     localStorage.setItem('cartData',JSON.stringify(cart))
     displayItems()
 }
 
 function itemCount(name){
+   let cart = localStorage.cartData == null ? [] : JSON.parse(localStorage.cartData)
    let filteredItems = cart.filter(ele => ele.Name == name)
    return filteredItems.length
 }

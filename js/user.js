@@ -1,20 +1,27 @@
 const dropDownbtn = document.getElementById('drop-down-btn')
 let dropDownList = document.getElementById('nested-list')
 const search = document.getElementById('search')
-let buyData = JSON.parse(localStorage.getItem('data'))
-let rentData = JSON.parse(localStorage.rentalData) || []
 let cards = document.querySelectorAll('.swiper .swiper-slide .card')
 let itemDetails = document.querySelectorAll('.swiper .swiper-slide .card .more')
 let Container = document.getElementById('search-result')
 let carDetailsSection = document.querySelector('.car-details')
 let wrapper = document.querySelector('.wrapper')
 let addToCartBtn = document.querySelectorAll('.buyNow')
+
+let buyData ;
+let rentData ;
 let cartData ;
 
- if(localStorage.cartData != null){
-    cartData = JSON.parse(localStorage.cartData)
+ if(localStorage.rentalData != null){
+    rentData = JSON.parse(localStorage.rentalData)
  }else {
-    cartData = []
+    rentData = []
+ }
+
+ if(localStorage.data != null){
+    buyData = JSON.parse(localStorage.data)
+ }else {
+    buyData = []
  }
 
 
@@ -155,7 +162,7 @@ function getItemDetails(item, type) {
     })
 }
 
-
+let mood = 'buy'
 
 drawData(buyData, 'buy')
 
@@ -184,7 +191,7 @@ function drawData(data, type) {
         });
     }
     else{
-        rentData.forEach(element => {
+        data.forEach(element => {
         let car = `
       <div class="car">
                     <div class="image">
@@ -208,8 +215,6 @@ function drawData(data, type) {
 let rentSelector = document.getElementById('rent-car')
 let buySelector = document.getElementById('buy-car')
 
-let mood = 'buy'
-
 rentSelector.addEventListener('click',e =>{
     e.preventDefault()
     drawData(rentData,'rent')
@@ -223,14 +228,14 @@ buySelector.addEventListener('click',e =>{
 })
 
 search.addEventListener('input', e => {
-    let newData;
+    
     if (mood === 'buy') {
-        newData = buyData.filter(f =>
+       let newData = buyData.filter(f =>
             f.Name.toLowerCase().includes(search.value.toLowerCase()) ||
             f.Catigory.toLowerCase().includes(search.value.toLowerCase()))
         drawData(newData, 'buy')
     } else {
-        newData = rentData.filter(f =>
+       let newData = rentData.filter(f =>
             f.Name.toLowerCase().includes(search.value.toLowerCase()) ||
             f.Catigory.toLowerCase().includes(search.value.toLowerCase()))
         drawData(newData, 'rent')
@@ -238,6 +243,11 @@ search.addEventListener('input', e => {
 })
 
 function addToCart(name,price){
+     if(localStorage.cartData != null){
+    cartData = JSON.parse(localStorage.cartData)
+ }else {
+    cartData = []
+ }
     let item = {Name: name ,price:price}
     cartData.push(item)
     localStorage.setItem('cartData',JSON.stringify(cartData))
