@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>car-solutions</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <div class="car-details">
+
+    </div>
+    <div class="wrapper">
+        <nav>
+            <p class="logo">car-solutions</p>
+            <ul class="main-nav">
+                <li><a href="#returnTop">Home</a></li>
+                <li id="drop-down-btn">services <i class="fa-solid fa-angle-down"></i>
+                    <ul id="nested-list">
+                        <li id="rent-car"><a href="">rent a car</a></li>
+                        <li id="buy-car"><a href="">buy a car</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">contact</a></li>
+                <li><a href="html/cart.html" target="_blank"><i class="fa-solid fa-cart-shopping"></i> cart </a></li>
+            </ul>
+            <div id="login-icon"><a href="html/login.html" target="_blank">Login <i
+                        class="fa-solid fa-arrow-right-to-bracket"></i></a>
+            </div>
+        </nav>
+        <section class="view-cars" id="returnTop">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper"> 
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+        <section class="search">
+            <input type="text" placeholder="search by car name or category" id="search">
+            <div id="search-result">
+            </div>
+        </section>
+        <footer class="contact-section" id="contact">
+            <div class="contact-container">
+                <p>Created by <a href="https://your-portfolio.com" target="_blank" rel="noopener noreferrer">Ibrahim
+                        Khaled</a>
+                </p>
+                <ul class="links">
+                    <li><a href="mailto:iiibrahimKhaled@gmail.com" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-solid fa-square-envelope"></i> Email</a></li>
+                    <li><a href="https://www.linkedin.com/in/iibrahim-khaled/" target="_blank"
+                            rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a></li>
+                    <li><a href="https://github.com/iibrahimshaban" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-brands fa-github"></i> GitHub</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/user.js"></script>
+</body>
+
+</html>

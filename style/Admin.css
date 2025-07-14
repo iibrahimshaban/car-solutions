@@ -1,0 +1,201 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.dashboard{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background-color: #1A1A1A;
+}
+nav{
+    width: fit-content;
+    background-color: #4682B4;
+    color: white;
+    padding: 30px;
+    height: 500px;
+    position: fixed;
+    top: 50px;
+}
+nav h1{
+    font-size: 30px;
+    text-transform: capitalize;
+}
+nav ul{
+    list-style: none;
+    height: 80%;
+    display: grid;
+    align-items: center;
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    background-color: initial;
+}
+nav ul li a:hover{
+    background-color:#102230;
+}
+.Cruds{
+    margin: 5% auto;
+    padding: 50px;
+    border: #4682B4 solid 5px;
+    height: fit-content;
+    background-color: #333333;
+    position: relative;
+}
+.Cruds .field{
+    padding: 10px;
+}
+.Cruds h1{
+    color: white;
+    text-transform: capitalize;
+}
+.Cruds .field input{
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-bottom: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 5px;
+    background-color: #2F2F2F;
+    color: #FFFFFF;
+    margin-top: 5px;
+    text-transform: capitalize;
+}
+.Cruds .field label{
+    font-size: 20px;
+    color: #B0B0B0;
+}
+.Cruds .btn{
+    cursor: pointer;
+    font-size: 15px;
+    padding: 5px;
+}
+.submitBtn,.resetBtn{
+    background-color: #ADD8E6;
+    width: 40%;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 40px;
+}
+.submitBtn:hover{
+    background-color: #5a9bd4;
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+}
+.resetBtn{
+    background-color: #FF6B6B;
+}
+.resetBtn:hover{
+    background-color: #FF8760;
+}
+.hidden{
+    display: none;
+}
+.image-selector{
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: grid;
+    background-color: #4682B4;
+    grid-template-columns: repeat(2,1fr);
+    row-gap: 10px;
+    overflow-wrap: break-word;
+    overflow-y:scroll;
+    padding: 10px;
+    display: none;
+}
+.image-selector img{
+    border: 2px solid white;
+    width: 220px;
+    height: 200px;
+    cursor: pointer;
+}
+.errors{
+    width: 60%;
+    border: 1px solid red;
+    color: white;
+    padding: 10px;
+    margin: auto;
+    word-wrap: break-word;
+    font-size: 15px;
+}
+.Cruds .cars{
+    width: fit-content;
+}
+.Cruds .cars thead th{
+    padding: 10px 20px;
+    font-size: 20px;
+    color: #BBDEFB;
+    text-transform: capitalize;
+}
+.Cruds .cars tbody td{
+    padding: 10px 20px;
+    color: white;
+    text-transform: lowercase;
+    text-align: center;
+}
+.Cruds .cars button{
+    padding: 5px 10px;
+    border: none;
+    background-color: #2196F3;
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: lowercase;
+}
+.Cruds .cars button:hover{
+    background-color: #42A5F5;
+    transform: scale(1.1);
+}
+.Cruds .cars .delete{
+    background-color: #1976D2;
+}
+.Cruds .cars .delete:hover{
+    background-color: #1E88E5;
+}
+#nav-displayer{
+    color: black;
+    background-color:white;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: none;
+}
+.hiddenNav{
+    width: fit-content;
+    display: block;
+}
+
+@media (max-width:970px){
+    nav{
+        width: 0;
+        display: none;
+        transition: 1s;
+        z-index: 10;
+    }
+    #nav-displayer{
+        display: block;
+        z-index: 100;
+    }
+
+}

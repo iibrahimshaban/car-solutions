@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/all.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login">
+            <h1>Login</h1>
+            <div id="error-box"></div>
+            <form action="/html/admin.html">
+                <div class="outer-container">
+                    <label for="admin" class="title">username</label>
+                    <div class="inner-container">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="admin" id="admin" name="username">
+                    </div>
+                </div>
+                <div class="outer-container">
+                    <label for="password" class="title">password</label>
+                    <div class="inner-container">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="password" id="password" name="password">
+                        <span id="open-eye"><i class="fa-solid fa-eye-slash"></i></span>
+                        <span id="close-eye"><i class="fa-solid fa-eye"></i></span>
+                    </div>
+                </div> 
+                <input type="submit" value="login" id="submit" name="submit">
+            </form>
+        </div>
+    </div>
+    <script src="/js/login.js"></script>
+</body>
+</html>
