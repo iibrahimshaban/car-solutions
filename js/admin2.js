@@ -521,8 +521,6 @@ function updateItem(id, type) {
     CrudsContainer.innerHTML = updateData
 
     let updateForm = document.getElementById('updateForm')
-    console.log(updateForm)
-    let errorSection = document.getElementById('errors')
 
     let car = {}
 
@@ -550,16 +548,13 @@ function updateItem(id, type) {
         car = {};
     }
 
-    console.log(car)
-
     submitBtn = document.getElementById('submitUpdate')
 
     submitBtn.addEventListener('click', function (event) {
         event.preventDefault()
         console.log('submitting')
          updateCar()
-         loadUpdateDataForm()
-        
+         loadUpdateDataForm()       
     })
 
     let imageBtn = document.getElementById('imageBtn')
@@ -629,7 +624,7 @@ function updateItem(id, type) {
             let data = JSON.parse(localStorage.rentalData)
             data[id] = updatedcar
             console.log(data[id])
-            localStorage.setItem('data', JSON.stringify(data));
+            localStorage.setItem('rentalData', JSON.stringify(data));
             alert('updated successfully')
             updateForm.reset()
         }  

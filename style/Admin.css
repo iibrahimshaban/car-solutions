@@ -196,6 +196,7 @@ nav ul li a:hover{
     #nav-displayer{
         display: block;
         z-index: 100;
+        position: fixed;
     }
 
 }
